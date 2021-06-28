@@ -10,29 +10,23 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Bai4 extends AppCompatActivity {
-    FrameLayout frameLayout;
-    Button nextCard;
-    int[] cards = {R.drawable.image_12, R.drawable.image_2, R.drawable.image_3, R.drawable.ic_launcher_foreground, R.drawable.image_5, R.drawable.image_6, R.drawable.image_7, R.drawable.image_8, R.drawable.image_9, R.drawable.image_10, R.drawable.image_11, R.drawable.image_12, R.drawable.image_13};
+    int[] cards = {R.drawable.card_4, R.drawable.card_2, R.drawable.card_10, R.drawable.card_9};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bai4);
 
+        FrameLayout frameLayout = findViewById(R.id.frameLayout);
+        int i = 0;
+        for(int a:cards) {
+            ImageView imageView = new ImageView(this);
+            imageView.setImageResource(a);
 
-        frameLayout = findViewById(R.id.frameLayout);
-
-        int i =0;
-        for (int id: cards) {
-            ImageView view = new ImageView(this);
-            view.setImageResource(id);
-
-            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-            params.leftMargin = (int) (i*50 *this.getResources().getDisplayMetrics().density);
-            params.width = (int) (200 *this.getResources().getDisplayMetrics().density);
-            params.height= (int) (250 *this.getResources().getDisplayMetrics().density);
-            view.setLayoutParams(params);
-            frameLayout.addView(view);
+            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(200, 250);
+            params.setMargins(100, 100, 100, 100);
+            imageView.setLayoutParams(params);
+            frameLayout.addView(imageView);
         }
     }
 

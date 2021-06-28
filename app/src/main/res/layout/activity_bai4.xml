@@ -7,6 +7,5 @@
     tools:context=".Bai4"
     android:id="@+id/frameLayout">
 
-    
 
 </FrameLayout>
