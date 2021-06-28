@@ -10,26 +10,26 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Bai4 extends AppCompatActivity {
-    int[] cards = {R.drawable.card_4, R.drawable.card_2, R.drawable.card_10, R.drawable.card_9};
+    int[] cards = {R.drawable.card_2, R.drawable.card_4, R.drawable.card_9, R.drawable.card_10};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bai4);
-
         FrameLayout frameLayout = findViewById(R.id.frameLayout);
-        int i = 0;
-        for(int a:cards) {
-            ImageView imageView = new ImageView(this);
-            imageView.setImageResource(a);
 
-            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(200, 250);
-            params.setMargins(100, 100, 100, 100);
-            imageView.setLayoutParams(params);
-            frameLayout.addView(imageView);
+        int i = 0;
+        for(int a: cards) {
+            ImageView view = new ImageView(this);
+            view.setImageResource(a);
+
+            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            params.leftMargin = (int) (i * 50 * this.getResources().getDisplayMetrics().density);
+            params.width = (int) (200 * this.getResources().getDisplayMetrics().density);
+            params.height = (int) (250 * this.getResources().getDisplayMetrics().density);
+            view.setLayoutParams(params);
+            frameLayout.addView(view);
+            i++;
         }
     }
-
-
-
 }
