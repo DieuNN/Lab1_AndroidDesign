@@ -30,5 +30,10 @@ class MainActivity : AppCompatActivity() {
         bai4.setOnClickListener {
             startActivity(Intent(this, Bai4::class.java))
         }
+
+        val bai5:Button = findViewById(R.id.btnBai5)
+        bai5.setOnClickListener {
+            startActivity(Intent(this, Bai5::class.java))
+        }
     }
 }

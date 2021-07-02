@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lab1">
-        <activity android:name=".Bai4"></activity>
+        <activity android:name=".Bai5"></activity>
+        <activity android:name=".Bai4" />
         <activity android:name=".Bai3" />
         <activity android:name=".Bai2" />
         <activity android:name=".Bai1" />
